@@ -6,6 +6,6 @@ export class Serie {
     public seasons: number,
     public description: string,
     public webpage: string,
-    public poster: string
+    public img: string
   ) {}
 }

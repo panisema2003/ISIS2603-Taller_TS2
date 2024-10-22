@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TS1</title>
+    <title>TS2</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css"
@@ -23,17 +23,31 @@
         </div>
         <div class="col-11"><h1>TV Series</h1></div>
       </div>
-      <table class="table table-striped">
-        <thead class="thead-light">
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Channel</th>
-            <th>Seasons</th>
-          </tr>
-        </thead>
-        <tbody id="tBody"></tbody>
-      </table>
+      <div class="row">
+        <div class="col-8">
+          <table class="table table-striped">
+            <thead class="thead-light">
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Channel</th>
+                <th>Seasons</th>
+              </tr>
+            </thead>
+            <tbody id="tBody"></tbody>
+          </table>
+        </div>
+        <div class="col-4">
+          <div id="detail" class="card" style="display: none">
+            <img src="" alt="Image serie" id="imgSerie" />
+            <div class="card-body">
+              <h4 id="nameSerie" class="card-title"></h4>
+              <p id="descSerie" class="card-text"></p>
+              <a href="#" id="webSerie" target="_blank"></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
