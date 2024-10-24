@@ -19,13 +19,8 @@ series.forEach((serie) => {
 console.log("Tabla llena");
 function showDetail(serie) {
     detail.style.display = "block";
-    if (serie.img) {
-        imgSerie.src = serie.img;
-        imgSerie.style.display = "block";
-    }
-    else {
-        console.error("Invalid image URL");
-    }
+    imgSerie.src = serie.img;
+    imgSerie.style.display = "block";
     nameSerie.textContent = serie.name;
     descSerie.textContent = serie.description;
     webSerie.href = serie.webpage;
