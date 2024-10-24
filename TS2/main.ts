@@ -4,7 +4,7 @@ import { series } from "./data.js";
 const tBody = document.getElementById("tBody") as HTMLTableSectionElement;
 const detail = document.getElementById("detail") as HTMLDivElement;
 const imgSerie = document.getElementById("imgSerie") as HTMLImageElement;
-const nameSerie = document.getElementById("nameSereie") as HTMLHeadingElement;
+const nameSerie = document.getElementById("nameSerie") as HTMLHeadingElement;
 const descSerie = document.getElementById("descSerie") as HTMLParagraphElement;
 const webSerie = document.getElementById("webSerie") as HTMLAnchorElement;
 
@@ -13,7 +13,7 @@ series.forEach((serie: Serie) => {
   const row = tBody.insertRow();
   row.innerHTML = `
         <td><b>${serie.id}</b></td>
-        <td>${serie.name}</td>
+        <td><a href="#" onclick="event.preventDefault();">${serie.name}</a></td>
         <td>${serie.channel}</td>
         <td>${serie.seasons}</td>
     `;
@@ -23,7 +23,12 @@ console.log("Tabla llena");
 
 function showDetail(serie: Serie): void {
   detail.style.display = "block";
-  imgSerie.src = serie.img;
+  if (serie.img) {
+    imgSerie.src = serie.img;
+    imgSerie.style.display = "block";
+  } else {
+    console.error("Invalid image URL");
+  }
   nameSerie.textContent = serie.name;
   descSerie.textContent = serie.description;
   webSerie.href = serie.webpage;
